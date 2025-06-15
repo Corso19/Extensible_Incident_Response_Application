@@ -1,0 +1,1 @@
+DefaultConnection=Server=tcp:incidentresponsedb.database.windows.net,1433;Initial Catalog=IncidentResponseDB;Persist Security Info=False;User ID=CloudSA69c7f148;Password=Ultimate123!.;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30; 

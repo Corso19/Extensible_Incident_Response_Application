@@ -1,0 +1,177 @@
+/* define the color palette at the root level */
+:root {
+  --bs-primary: #0073e6; /* Primary Blue */
+  --bs-primary-hover: #005bb5; /* Hover Blue */
+  --bs-primary-dark: #004ba0; /* Darker Blue */
+  --bs-light-blue: #dce7f3; /* Light Blue */
+  --bs-bg-light: #f5faff; /* Light blueish-white for background */
+  --bs-white: #ffffff; /* White */
+  --bs-gray-dark: #333333; /* Neutral Dark Text */
+  --bs-dark: #004ba0;
+  --bs-table-hover: #f0f8ff; /* Light Blue for table hover */
+  --bs-shadow: rgba(0, 0, 0, 0.1); /* Light Shadow */
+}
+
+/* global styels */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  background-color: var(--bs-bg-light);
+  color: var(--bs-gray-dark);
+  font-family: 'Arial', sans-serif;
+}
+
+.wrapper {
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* color styles */
+.color-primary-hover {
+  color: var(--bs-primary-hover);
+}
+
+.color-primary-dark {
+  color: var(--bs-primary-dark);
+}
+
+.color-bg-light {
+  color: var(--bs-bg-light);
+}
+
+/* navbar styles */
+.xdr-navbar {
+  background-color: var(--bs-primary-hover);
+  color: var(--bs-bg-light);
+}
+
+.xdr-navbar .navbar-brand {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--bs-bg-light);
+}
+
+.xdr-navbar .navbar-brand:hover {
+  color: var(--bs-light-blue);
+  transform: scale(1.05);
+}
+
+.xdr-navbar .nav-link {
+  color: var(--bs-bg-light);
+  font-size: 1.1rem;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-weight: 400;
+}
+
+.xdr-navbar .nav-link:hover {
+  background-color: var(--bs-primary-dark);
+  color: var(--bs-bg-light);
+  font-weight: 600;
+}
+
+.xdr-navbar .navbar-toggler {
+  margin: 7px 0px;
+  border-color: var(--bs-primary-dark);
+  border-width: 2px;
+  color: var(--bs-primary-dark);
+  background-color: var(--bs-primary);
+}
+
+/* table styles */
+.sensors-table {
+  border: 2px solid var(--bs-gray-dark) !important;
+}
+
+.sensors-table th {
+  background-color: var(--bs-primary-hover) !important;
+  border: 2px solid var(--bs-gray-dark) !important;
+  color: var(--bs-bg-light) !important;
+}
+
+.sensors-table td {
+  border: 2px solid var(--bs-gray-dark) !important;
+}
+
+/* modal styles */
+.modal-header {
+  background-color: var(--bs-primary-dark) !important;
+  color: var(--bs-bg-light) !important;
+}
+
+.custom-hr {
+  height: 2px !important;
+  background-color: var(--bs-gray-dark);
+  opacity: 1 !important;
+}
+
+.accordion-header .accordion-button {
+  border: 2px solid var(--bs-primary-hover);
+  font-weight: bolder;
+  background-color: var(--bs-bg-light);
+}
+
+.accordion-header .accordion-button:not(.collapsed) {
+  background-color: var(--bs-primary-hover);
+  color: var(--bs-bg-light);
+  font-weight: bolder;
+}
+
+.accordion-body {
+  border: 2px solid var(--bs-primary-hover);
+  border-top: 0;
+}
+
+.accordion-header .accordion-button::after {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z' stroke='%23333'/></svg>") !important;
+}
+
+.accordion-header .accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23f5faff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z' stroke='%23f5faff'/></svg>") !important;
+}
+
+/* incident tabs */
+.incident-tabs .nav-link.active {
+  background-color: var(--bs-primary-hover) !important;
+  color: var(--bs-bg-light) !important;
+  font-weight: bolder;
+}
+
+.incident-tabs .nav-link {
+  background-color: var(--bs-bg-light) !important;
+  color: var(--bs-gray-dark) !important;
+  font-weight: bolder;
+}
+
+.incident-tabs .nav-link:hover {
+  border-top: 2px solid var(--bs-gray-dark) !important;
+  border-left: 2px solid var(--bs-gray-dark) !important;
+  border-right: 2px solid var(--bs-gray-dark) !important;
+}
+
+.incident-tab {
+  border: 2px solid var(--bs-gray-dark);
+  border-radius: 4px;
+  padding: 20px;
+}
+
+/* Grafana dashboard styles */
+
+.grafana-container {
+  padding: 20px;
+  background-color: var(--bs-bg-light);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px var(--bs-shadow);
+  height: calc(100vh - 100px);
+}
+
+.grafana-container iframe {
+  border-radius: 4px;
+  background-color: var(--bs-white);
+  height: 100%;
+}

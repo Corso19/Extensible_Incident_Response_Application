@@ -1,0 +1,78 @@
+﻿@model IncidentResponseAPI.Models.SensorsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Sensor</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Sensor Name
+        </dt>
+        <dd class="col-sm-10">
+            @Model.SensorName
+        </dd>
+        <dt class="col-sm-2">
+            Type
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Type
+        </dd>
+        <dt class="col-sm-2">
+            Configuration
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Configuration
+        </dd>
+        <dt class="col-sm-2">
+            Is Enabled
+        </dt>
+        <dd class="col-sm-10">
+            @Model.isEnabled
+        </dd>
+        <dt class="col-sm-2">
+            Created At
+        </dt>
+        <dd class="col-sm-10">
+            @Model.CreatedAt.ToString("g")
+        </dd>
+        <dt class="col-sm-2">
+            Last Run At
+        </dt>
+        <dd class="col-sm-10">
+            @Model.LastRunAt?.ToString("g") ?? "N/A"
+        </dd>
+        <dt class="col-sm-2">
+            Next Run After
+        </dt>
+        <dd class="col-sm-10">
+            @Model.NextRunAfter?.ToString("g") ?? "N/A"
+        </dd>
+        <dt class="col-sm-2">
+            Retrieval Interval
+        </dt>
+        <dd class="col-sm-10">
+            @Model.RetrievalInterval
+        </dd>
+        <dt class="col-sm-2">
+            Last Error
+        </dt>
+        <dd class="col-sm-10">
+            @Model.LastError ?? "N/A"
+        </dd>
+        <dt class="col-sm-2">
+            Last Event Marker
+        </dt>
+        <dd class="col-sm-10">
+            @Model.LastEventMarker ?? "N/A"
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.SensorId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

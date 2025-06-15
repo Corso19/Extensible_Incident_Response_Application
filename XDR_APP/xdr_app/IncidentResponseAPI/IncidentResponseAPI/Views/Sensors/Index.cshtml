@@ -1,0 +1,47 @@
+﻿@model IEnumerable<IncidentResponseAPI.Models.SensorsModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Sensor Name</th>
+        <th>Type</th>
+        <th>Configuration</th>
+        <th>Is Enabled</th>
+        <th>Created At</th>
+        <th>Last Run At</th>
+        <th>Next Run After</th>
+        <th>Retrieval Interval</th>
+        <th>Last Error</th>
+        <th>Last Event Marker</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.SensorName</td>
+            <td>@item.Type</td>
+            <td>@item.Configuration</td>
+            <td>@item.isEnabled</td>
+            <td>@item.CreatedAt.ToString("g")</td>
+            <td>@item.LastRunAt?.ToString("g") ?? "N/A"</td>
+            <td>@item.NextRunAfter?.ToString("g") ?? "N/A"</td>
+            <td>@item.RetrievalInterval</td>
+            <td>@item.LastError ?? "N/A"</td>
+            <td>@item.LastEventMarker ?? "N/A"</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SensorId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SensorId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SensorId">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
